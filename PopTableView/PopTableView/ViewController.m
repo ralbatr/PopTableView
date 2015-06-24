@@ -9,8 +9,11 @@
 #import "ViewController.h"
 #import "YSPopMenuView.h"
 
-@interface ViewController ()
-
+@interface ViewController ()<SelectCellDelegate>
+{
+    YSPopMenuView *popView;
+    YSPopMenuView *popView2;
+}
 @end
 
 @implementation ViewController
@@ -19,14 +22,31 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor brownColor];
     
-    YSPopMenuView *popView = [[YSPopMenuView alloc] initWithButtonFrame:CGRectMake(20, 130, 100, 30) andViewHeight:100.0 andTitle:@"try"];
+    popView = [[YSPopMenuView alloc] initWithButtonFrame:CGRectMake(20, 130, 100, 30) andViewHeight:100.0 andTitle:@"try"];
     popView.datalist = @[@"123",@"234",@"456",@"567"];
+    popView.delegate = self;
+    popView.isCloseAfterClick = YES;
     [self.view addSubview:popView];
+    
+    popView2 = [[YSPopMenuView alloc] initWithButtonFrame:CGRectMake(120, 130, 100, 30) andViewHeight:100.0 andTitle:@"3try"];
+    popView2.datalist = @[@"a23",@"234",@"456",@"567"];
+    popView2.delegate = self;
+    [self.view addSubview:popView2];
+    
+    UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(120, 200, 100, 30)];
+    [btn addTarget:self action:@selector(butAc) forControlEvents:UIControlEventTouchUpInside];
+    btn.backgroundColor = [UIColor greenColor];
+    [self.view addSubview:btn];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)butAc {
+    [popView hide];
+    [popView2 buttonAction];
+}
+
+- (void)cellDidSelectedAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSLog(@"indexPath %ld ",indexPath.row);
 }
 
 @end

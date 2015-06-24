@@ -108,6 +108,9 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if ([self.delegate respondsToSelector:@selector(cellDidSelectedAtIndexPath:)]) {
         [self.delegate cellDidSelectedAtIndexPath:indexPath];
+        if (self.isCloseAfterClick) {
+            [self buttonAction];
+        }
     }
     if (self.isCloseAfterClick) {
         //
@@ -115,15 +118,15 @@
 }
 
 - (void)show {
-    [UIView animateWithDuration:0.5 animations:^{
-        [self.tableView setHidden:NO];
-    }];
+    if (self.tableView.isHidden) {
+        [self buttonAction];
+    }
 }
 
 - (void)hide {
-    [UIView animateWithDuration:0.5 animations:^{
-        [self.tableView setHidden:YES];
-    }];
+    if (!self.tableView.isHidden) {
+        [self buttonAction];
+    }
 }
 
 - (void)reloadDate {

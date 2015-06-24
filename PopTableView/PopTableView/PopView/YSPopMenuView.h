@@ -34,6 +34,7 @@
 
 - (void)reloadDate;
 // 重新加载数据，刷新界面
+- (void)buttonAction;
 
 
 @end
