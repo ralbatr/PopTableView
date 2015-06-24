@@ -8,6 +8,12 @@
 
 #import "YSPopMenuView.h"
 
+@interface YSPopMenuView()
+{
+    CGRect _viewFrame;
+}
+@end
+
 @implementation YSPopMenuView
 
 - (id) initWithButtonFrame:(CGRect)frame andViewHeight:(CGFloat)height andTitle:(NSString *)title {
@@ -28,7 +34,7 @@
         self.tableView.delegate = self;
         self.tableView.dataSource = self;
 //        self.tableView.frame = CGRectMake(0, 0, frame.size.width, frame.size.height-height);
-        self.tableView.frame = CGRectMake(0, 0, frame.size.width, height-self.button.frame.size.height);
+        _viewFrame = CGRectMake(0, 0, frame.size.width, height-self.button.frame.size.height);
         [self addSubview:self.tableView];
         
         self.tableView.hidden = YES;
@@ -38,7 +44,20 @@
 }
 
 - (void)buttonAction {
-    [UIView animateWithDuration:0.5 animations:^{
+    if (self.tableView.isHidden) {
+        self.tableView.frame = CGRectMake(_viewFrame.origin.x, _viewFrame.origin.y+_viewFrame.size.height, _viewFrame.size.width, 1);
+    }
+    [UIView animateWithDuration:0.9 animations:^{
+        if (self.tableView.isHidden) {
+            self.tableView.frame = _viewFrame;
+        }
+    }];
+    [UIView animateWithDuration:0.9 animations:^{
+        if (self.tableView.isHidden) {
+        }else {
+            self.tableView.frame = CGRectMake(_viewFrame.origin.x, _viewFrame.origin.y+_viewFrame.size.height, _viewFrame.size.width, 1);
+        }
+    } completion:^(BOOL finished) {
         self.tableView.hidden = self.tableView.isHidden?NO:YES;
     }];
     
