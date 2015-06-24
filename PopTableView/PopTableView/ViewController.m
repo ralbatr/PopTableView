@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "YSPopMenuView.h"
 
 @interface ViewController ()
 
@@ -16,7 +17,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    self.view.backgroundColor = [UIColor brownColor];
+    
+    YSPopMenuView *popView = [[YSPopMenuView alloc] initWithButtonFrame:CGRectMake(20, 130, 100, 30) andViewHeight:100.0 andTitle:@"try"];
+    popView.datalist = @[@"123",@"234",@"456",@"567"];
+    [self.view addSubview:popView];
 }
 
 - (void)didReceiveMemoryWarning {

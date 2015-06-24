@@ -14,6 +14,7 @@
 		DFF51E231B39418B000AF2EC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFF51E221B39418B000AF2EC /* Images.xcassets */; };
 		DFF51E261B39418B000AF2EC /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFF51E241B39418B000AF2EC /* LaunchScreen.xib */; };
 		DFF51E321B39418B000AF2EC /* PopTableViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DFF51E311B39418B000AF2EC /* PopTableViewTests.m */; };
+		DFF51E3D1B39420A000AF2EC /* YSPopMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = DFF51E3C1B39420A000AF2EC /* YSPopMenuView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,8 @@
 		DFF51E2B1B39418B000AF2EC /* PopTableViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PopTableViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFF51E301B39418B000AF2EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DFF51E311B39418B000AF2EC /* PopTableViewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PopTableViewTests.m; sourceTree = "<group>"; };
+		DFF51E3B1B39420A000AF2EC /* YSPopMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YSPopMenuView.h; path = PopView/YSPopMenuView.h; sourceTree = "<group>"; };
+		DFF51E3C1B39420A000AF2EC /* YSPopMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YSPopMenuView.m; path = PopView/YSPopMenuView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +88,8 @@
 				DFF51E1A1B39418B000AF2EC /* AppDelegate.m */,
 				DFF51E1C1B39418B000AF2EC /* ViewController.h */,
 				DFF51E1D1B39418B000AF2EC /* ViewController.m */,
+				DFF51E3B1B39420A000AF2EC /* YSPopMenuView.h */,
+				DFF51E3C1B39420A000AF2EC /* YSPopMenuView.m */,
 				DFF51E1F1B39418B000AF2EC /* Main.storyboard */,
 				DFF51E221B39418B000AF2EC /* Images.xcassets */,
 				DFF51E241B39418B000AF2EC /* LaunchScreen.xib */,
@@ -220,6 +225,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DFF51E1E1B39418B000AF2EC /* ViewController.m in Sources */,
+				DFF51E3D1B39420A000AF2EC /* YSPopMenuView.m in Sources */,
 				DFF51E1B1B39418B000AF2EC /* AppDelegate.m in Sources */,
 				DFF51E181B39418B000AF2EC /* main.m in Sources */,
 			);
